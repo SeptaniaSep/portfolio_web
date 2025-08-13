@@ -23,7 +23,7 @@ export function Layout() {
   }, [homeInView, aboutInView, portfolioInView, contactInView]);
 
   return (
-    <div className="bg-black text-white font-sans">
+    <div className="bg-black text-white font-sans overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
       <Navbar active={activeSection} />
 
       <section
