@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import Skill from "./skil";
+
 
 export default function AboutMe() {
   const { ref, inView } = useInView({

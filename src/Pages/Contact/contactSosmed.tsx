@@ -1,4 +1,3 @@
-import React from "react";
 import { FaWhatsapp, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function ContactSosmed() {

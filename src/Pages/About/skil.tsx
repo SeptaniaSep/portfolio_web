@@ -3,17 +3,14 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
-  FaNodeJs,
   FaGitAlt,
   FaGithub,
-  FaFigma,
   FaBootstrap,
 } from "react-icons/fa";
 import type { IconType } from "react-icons";
 import {
   SiTailwindcss,
   SiExpress,
-  SiMongodb,
   SiPrisma,
   SiVite,
   SiNextdotjs,

@@ -1,8 +1,5 @@
 import { FiGithub } from "react-icons/fi";
 
-type NavbarProps = {
-  active: string;
-};
 
 const Navbar = ({ active }: { active: string }) => {
   return (

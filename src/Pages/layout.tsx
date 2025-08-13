@@ -4,7 +4,6 @@ import Navbar from "@/Components/ui/navbar";
 import { Home } from "./Homee/home";
 import About from "./About/about";
 import Portofolio from "./Portofolio/portofolio";
-import SplashCursor from "@/Components/reactBits/cursor";
 import Contact from "./Contact/contact";
 
 export function Layout() {
