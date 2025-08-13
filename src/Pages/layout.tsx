@@ -57,6 +57,16 @@ export function Layout() {
       >
         <Contact />
       </section>
+      
+      <footer className="bg-black text-gray-400 py-6 border-t border-yellow-500 text-center">
+        <p className="text-sm">
+          © {new Date().getFullYear()} Septania Nopa. All rights reserved.
+        </p>
+        <p className="text-xs mt-1">
+          Built with <span className="text-yellow-500">React</span> & Tailwind
+          CSS
+        </p>
+      </footer>
     </div>
   );
 }
