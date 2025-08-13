@@ -19,7 +19,11 @@ export default function PortfolioCard({ project }: { project: Project }) {
         </h3>
       </Link>
 
-      <p className="text-sm text-gray-300 mb-3">{project.description}</p>
+      <p className="text-sm text-gray-300 mb-3">
+        {project.description.split(" ").slice(0, 5).join(" ") +
+          (project.description.split(" ").length > 5 ? "..." : "")}
+      </p>
+
       <p className="text-xs text-yellow-800 font-medium mb-2">
         {project.techStack}
       </p>
