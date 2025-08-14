@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 
 export default function AboutMe() {
   const { ref, inView } = useInView({
@@ -57,16 +57,17 @@ export default function AboutMe() {
             >
               <a
                 className="text-white bg-yellow-600 hover:bg-yellow-500 hover:text-black font-semibold shadow-md hover:shadow-yellow-400/70 transform hover:scale-105 transition duration-300 ease-in-out py-1.5 px-6 rounded-md mr-4"
-                href="https://drive.google.com/file/d/1-bScfkY-Lcet7eA98mNvG7fblD-_zXpk/view?usp=drive_link"
+                href="https://drive.google.com/drive/u/0/folders/1yc8xPA5I7b5oRQJNaNoPq-hdfy1VqBRo"
               >
-                CV ATS
+                CV Septania
               </a>
-              <a
-                className="text-white border border-[#4e4e4eaa] bg-[#252525aa] hover:bg-[#4e4e4eaa]hover:text-black font-semibold shadow-md hover:shadow-yellow-400/70 transform hover:scale-105 transition duration-300 ease-in-out py-1.5 px-6 rounded-md"
-                href="https://drive.google.com/file/d/1mkNfdmLZbklkqnX1kHcybo998_YnSg2F/view?usp=drive_link"
+
+              <Link
+                to="/education-experience"
+                className="text-white border border-[#4e4e4eaa] bg-[#252525aa] hover:bg-[#4e4e4eaa] hover:text-black font-semibold shadow-md hover:shadow-yellow-400/70 transform hover:scale-105 transition duration-300 ease-in-out py-1.5 px-6 rounded-md"
               >
-                CV & PORTOfOLIO
-              </a>
+                Education & Experience
+              </Link>
             </motion.div>
           </div>
         </div>
