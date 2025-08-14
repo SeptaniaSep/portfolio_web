@@ -9,18 +9,39 @@ export default function AboutMe() {
   });
 
   return (
-    <div ref={ref} id="about" className=" text-white">
+    <motion.div
+      ref={ref}
+      id="about"
+      className="text-white"
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6 }}
+    >
       <div className="items-center w-full max-w-5xl px-8 py-10 bg-[#252525aa] text-white rounded-xl shadow-lg backdrop-blur">
-        <div className="flex items-center gap-4">
+        {/* Judul */}
+        <motion.div
+          className="flex items-center gap-4"
+          initial={{ opacity: 0, x: -50 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <h2 className="text-xl font-bold whitespace-nowrap">About Me</h2>
-          <div className="h-[2px] w-[250px] bg-yellow-500" />
-        </div>
+          <motion.div
+            className="h-[2px] w-[250px] bg-yellow-500"
+            initial={{ scaleX: 0 }}
+            animate={inView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            style={{ transformOrigin: "left" }}
+          />
+        </motion.div>
 
+        {/* Isi konten */}
         <div className="flex p-8 gap-6 justify-between">
+          {/* Foto */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={inView ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: 0.1 }}
+            transition={{ duration: 0.6 }}
           >
             <div className="rounded-full border-4 border-yellow-400 p-2 shadow-lg bounce">
               <img
@@ -31,6 +52,7 @@ export default function AboutMe() {
             </div>
           </motion.div>
 
+          {/* Deskripsi */}
           <div className="grid gap-4">
             <motion.div
               initial={{ x: 100, opacity: 0 }}
@@ -49,11 +71,13 @@ export default function AboutMe() {
                 in web development.
               </p>
             </motion.div>
+
+            {/* Tombol */}
             <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              animate={inView ? { x: 0, opacity: 6 } : {}}
-              transition={{ duration: 0.2, delay: 0.2 }}
-              className="max-w-xl "
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="max-w-xl"
             >
               <a
                 className="text-white bg-yellow-600 hover:bg-yellow-500 hover:text-black font-semibold shadow-md hover:shadow-yellow-400/70 transform hover:scale-105 transition duration-300 ease-in-out py-1.5 px-6 rounded-md mr-4"
@@ -72,6 +96,6 @@ export default function AboutMe() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

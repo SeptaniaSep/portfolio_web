@@ -20,6 +20,7 @@ import {
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { VscVscode } from "react-icons/vsc";
+import { motion } from "framer-motion";
 
 interface SkillItemProps {
   name: string;
@@ -29,7 +30,12 @@ interface SkillItemProps {
 
 function SkillItem({ name, Icon, isHighlighted }: SkillItemProps) {
   return (
-    <div
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.4 }}
       className={clsx(
         "flex items-center gap-4 border px-4 py-4 rounded-lg bg-black text-white transition-all duration-500 cursor-pointer",
         {
@@ -42,7 +48,7 @@ function SkillItem({ name, Icon, isHighlighted }: SkillItemProps) {
     >
       <Icon className="text-3xl text-yellow-400" />
       <span className="text-sm">{name}</span>
-    </div>
+    </motion.div>
   );
 }
 
@@ -78,15 +84,38 @@ export default function Skill() {
 
   return (
     <div className="flex items-center justify-center ">
-      <div className="w-full max-w-4xl space-y-16 py-16 text-white rounded-xl shadow-lg backdrop-blur">
+      <motion.div
+        className="w-full max-w-4xl space-y-16 py-16 text-white rounded-xl shadow-lg backdrop-blur"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="text-center">
-          <div className="flex items-center gap-4 mb-6">
+          <motion.div
+            className="flex items-center gap-4 mb-6 justify-center"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-xl font-bold whitespace-nowrap">
               Tech Stack & Tools
             </h2>
             <div className="h-[2px] w-[200px] bg-yellow-500" />
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-center">
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-center"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.1 },
+              },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {allSkills.map((item, index) => (
               <SkillItem
                 key={item.name}
@@ -95,9 +124,9 @@ export default function Skill() {
                 isHighlighted={highlightIndex === index}
               />
             ))}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
