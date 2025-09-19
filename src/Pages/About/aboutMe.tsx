@@ -81,7 +81,7 @@ export default function AboutMe() {
             >
               <a
                 className="text-white bg-yellow-600 hover:bg-yellow-500 hover:text-black font-semibold shadow-md hover:shadow-yellow-400/70 transform hover:scale-105 transition duration-300 ease-in-out py-1.5 px-6 rounded-md mr-4"
-                href="https://drive.google.com/drive/u/0/folders/1yc8xPA5I7b5oRQJNaNoPq-hdfy1VqBRo"
+                href="https://drive.google.com/file/d/1YpzUAKNYpHxAkOjyOiq7RDWYHKYKXJno/view?usp=drive_link"
               >
                 CV Septania
               </a>

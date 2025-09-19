@@ -11,7 +11,7 @@ export default function EducationExperience() {
   };
 
   return (
-    <div className="p-8 bg-gradient-to-b from-gray-900 to-gray-950">
+    <div className="p-8 bg-gradient-to-b from-black to-gray-900">
       {/* Tombol Kembali */}
       <button
         onClick={handleBack}
